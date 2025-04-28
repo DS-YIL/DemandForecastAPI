@@ -61,8 +61,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'DemandForecast',
         'USER': 'postgres',
-        'PASSWORD': 'Yokogawa@560100',
-        'HOST': 'ZP-ECO-DB002',
+        'PASSWORD': 'Localdb@12345',
+        'HOST': 'localhost',
         'PORT': '5432',
         'ENFORCE_SCHEMA': False,
     }

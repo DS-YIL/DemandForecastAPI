@@ -34,7 +34,7 @@ def main_bom_explosion(code, qty, week=None):
         Ensures that if K1 is the last prefix, CPA remains in the standard format.
         """
         # Special rule: If K1 is the last prefix, return CPA in standard format
-        if option_code and option_code[-1] == 'K1':
+        if 'K1' in option_code:
             return cpa  # Return CPA as it is without appending additional suffixes
 
         # Handle other K rules (e.g., K2, K3, K6)
@@ -60,10 +60,15 @@ def main_bom_explosion(code, qty, week=None):
             cpa += model_name[1] + model_name[2] + model_name[3] + model_name[4] + '-' + model_name[5] + 'NNNN'
             if option_code:
                 if 'MG1' in option_code or 'MH1' in option_code:
-                    last_suffix = "/" + 'MG1'
+                    return cpa
+                elif 'Z' in option_code:
+                    last_suffix = "/" + 'MG1' + "/" + 'Z'
+                elif 'A1' in option_code:
+                    last_suffix = "/" + 'A1'
                 else:
                     last_suffix = "/" + option_code[-1]
                 cpa += last_suffix
+
         # Non-exotic rule
         else:
             if model_name[1] + model_name[2] in st_code:
@@ -81,9 +86,12 @@ def main_bom_explosion(code, qty, week=None):
 
                 if 'MG1' in option_code and 'MH1' in option_code:
                     option_code.remove('MH1')
+                    option_code.remove('MG1')
 
                 # for adding K3 and Z option code
                 cpa = process_option_codes(option_code, app_option, cpa)
+
+            # if not in
             else:
                 cpa += model_name[1] + model_name[2]
                 cpa += '0' if model_name[3] in ['0', '1', '2'] else '5'
@@ -100,6 +108,7 @@ def main_bom_explosion(code, qty, week=None):
 
                     # for adding K3 and Z option code
                     cpa = process_option_codes(option_code, app_option, cpa)
+
         return cpa
 
     # main logic is here.

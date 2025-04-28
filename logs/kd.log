@@ -9708,3 +9708,7 @@ WARNING  2024-12-02 12:21:34,406  D:\DemandForecast\DFBackend\venv\lib\site-pack
 
 WARNING  2024-12-02 14:43:44,761  D:\DemandForecast\DFBackend\venv\lib\site-packages\django\utils\log.py  log  222  23412  Unauthorized: /modeltoparts/ 
 
+WARNING  2025-04-28 14:21:10,185  D:\Demand Forecast\DFBackend\venv97\lib\site-packages\django\utils\log.py  log  222  4948  Unauthorized: /modeltoparts/ 
+
+WARNING  2025-04-28 15:39:55,252  D:\Demand Forecast\DFBackend\venv97\lib\site-packages\django\utils\log.py  log  222  10308  Unauthorized: /modeltoparts/ 
+
