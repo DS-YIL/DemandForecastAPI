@@ -1,0 +1,267 @@
+PART NO.,PART NAME,QTY,SC,MODEL CODE,OUTPUT,SPAN,MATERIAL,P-CONNECT,HOUSING,E-CONNECT,INDICATOR,BRACKET,OPTION:AND,OPTION:OR,OPTION:NOT
+F9913VF,Terminal cover for PR option (Red colour),1,,,,,,,1,,,,PR,,X2
+F9913SA,Case 2 - Terminal Cover,1,,,,,,,2,,,,,,"PR,X2"
+F9913SB,COVER,1,,,,,,,2,,,,PR,,X2
+F9913DF,TERMINAL COVER,1,,"EJA510E,EJA530E",,,,,3,,,,PR,,X2
+F9913TA,Case 1 - Terminal Cover,1,2,,,,,,1,,,,,,"PR,X2"
+F9913VA,Case 1 - Terminal Cover with /X2,1,2,,,,,,1,,,,X2,,PR
+F9913CA,Case 3 - Terminal Cover,1,2,"EJA510E,EJA530E",,,,,3,,,,,,"PR,X2"
+F9913DA,Case 3 - Terminal Cover with /X2,1,2,"EJA510E,EJA530E",,,,,3,,,,X2,,PR
+F9910LE,O-Ring for Terminal Cover,1,,,,,,,,,,,,,HE
+F9900GR,O-Ring for Terminal Cover when /HE,1,,,,,,,,,,,HE,,
+F9341JP,O-Ring for Meter / Blind Cover,1,,,,,,,,,,,,,HE
+F9900GS,O-Ring for Meter / Blind Cover when /HE,1,,,,,,,,,,,HE,,
+F9341JS,Zero Screw Cover,1,,,,,,,,,,,,,
+F9900GZ,"Screw for fixing zero screw cover, Ext. Gr., Int. Gr. & Back board for Case 1 or 2 or Int. Gr. & Back board for Case 3",2,,,,,,,,,,,,,
+F9903HE,Case 2 - Terminal Cover with /X2,1,,"EJA510E,EJA530E",,,,,2,,,,X2,,PR
+F9900RS,Name Plate,1,,"EJA510E,EJA530E",,,,,,,,,,,
+F9900RE,Tag Plate,1,,,,,,,"1,2,3",,,,,,
+F9900RG,"Screw - Name Plate, Tag Plate & Cert. Tag Plate for Case-1 or 3",4,,,,,,,"1,3",,,,,,
+F9900RR,"Screw - Name Plate, Tag Plate & Cert. Tag Plate for Case-2",4,,,,,,,2,,,,,,
+F9900GC,Case Lock Screw for Case-1 or 3,2,,,,,,,"1,3",,,,,,HC
+F9900RH,Case Lock Screw for Case-2 or when /HC option,2,,,,,,,"1,3",,,,HC,,
+F9900RH,Case Lock Screw for Case-2 or when /HC option,2,,,,,,,2,,,,,,
+F9900GH,Capsule O-ring,1,,,,,,,,,,,,,HE
+F9900GT,Capsule O-ring when /HE,1,,,,,,,,,,,HE,,
+F9300AF,Capsule Oil seal hole closing plate,1,,,,,,,,,,,,,
+F9299ZZ,SILICONE RUBBER,0,,,,,,,,,,,,,
+F9202SJ,SILICONGRE G-40M 1KG,0,,,,,,,,,,,,,
+C2138DE,TAPES,0,,,,,,,,,,,,,
+F9900GE,Rotation Stopper Plate,1,,,,"A,B,C",,,,,,,,,
+F9940WG,Rotation Stopper Plate for EJA530 'D' cap,1,,,,D,,,,,,,,,
+F9900RJ,Rotation Stopper Screw,1,,,,,,,,,,,,,
+F9921AE,Profi bus - Amp. ,1,,"EJA510E,EJA530E",G,,,,,,,,GS16,,
+F9921AJ,Profi bus - Amp. ,1,,"EJA510E,EJA530E",G,,,,,,,,,,GS16
+F9920BN,Hart/BRAIN - Amp. With Cert,1,,,"D,J",,,,,,,,,"CS1,CU1,FS1,FU1,GS11,GS12,GS21,GU11,GU12,GU21,JS4,KS21,KU22,NS21,PS21,SU21,SU22,US1",SLT
+F9920BQ,Hart/BRAIN - Amp. w/o Cert,1,,,"D,J",,,,,,,,,,"CS1,CU1,FS1,FU1,GS11,GS12,GS21,GU11,GU12,GU21,JS4,KS21,KU22,NS21,PS21,SLT,SU21,SU22,US1"
+F9921AD,AMP ASSY,1,,,F,,,,,,,,GS16,,
+F9921AH,Field bus - Amp. With Cert,1,,,F,,,,,,,,,,GS16
+F9920BX,Low Power - Amplifier,1,,,Q,,,,,,,,,,SLT
+F9920HN,AMP ASSY,1,,,"D,J",,,,,,,,SLT,,JH05
+F9920TK,TERMINAL ASSY,1,,,"D,J",,,,,,,,,"JS4,NS21,PS21,US1","A,CS1,CU1,FS1,FU1,GS11,GS12,GS21,GU11,GU12,GU21,J12,KS21,KU22,SU21,SU22"
+F9920TS,Brain/Hart - LPT Assy. with Cert F9920TT,1,,,"D,J",,,,,,,,,"CS1,CU1,FS1,FU1,GS11,GU11","A,GS12,GS21,GU12,GU21,J12,JS4,KS21,KU22,NS21,PS21,SU21,SU22,US1"
+F9920TT,TERMINAL ASSY,1,,,"D,J",,,,,,,,,"GS12,GS21,GU12,GU21,KS21,KU22,SU21,SU22","A,CS1,CU1,FS1,FU1,GS11,GU11,J12,JS4,NS21,PS21,US1"
+F9920TX,Low Power - LPT Assy,1,,,Q,,,,,,,,,,"A,SLT"
+F9920TL,TERMINAL ASSY,1,,,"D,J",,,,,,,,J12,,"A,CS1,CU1,FS1,FU1,GS11,GS12,GS21,GU11,GU12,GU21,JS4,NS21,PS21,SU21,SU22,US1"
+F9920TP,Brain/Hart - LPT Assy. w/o Cert,1,,,"D,J",,,,,,,,,,"A,CS1,CU1,FS1,FU1,GS11,GS12,GS21,GU11,GU12,GU21,J12,JS4,KS21,KU22,NS21,PS21,SLT,SU21,SU22,US1"
+F9921TF,Field/Profi Bus - LPT Assy. w/o Cert,1,,"EJA510E,EJA530E",G,,,,,,,,,,"A,CS15,FS15,GS16,KS26,NS25,SS26"
+F9920VK,LPT ASSY,1,,,"D,J",,,,,,,,A,"JS4,NS21,PS21,US1","CS1,CU1,FS1,FU1,GS11,GS12,GS21,GU11,GU12,GU21,J12,KS21,KU22,SU21,SU22"
+F9920VS,Brain/Hart - LPT Assy. with Cert & /A F9920VT,1,,,"D,J",,,,,,,,A,"CS1,CU1,FS1,FU1,GS11,GU11","GS12,GS21,GU12,GU21,J12,JS4,KS21,KU22,NS21,PS21,SU21,SU22,US1"
+F9920VT,LPT ASSY,1,,,"D,J",,,,,,,,A,"GS12,GS21,GU12,GU21,KS21,KU22,SU21,SU22","CS1,CU1,FS1,FU1,GS11,GU11,J12,JS4,NS21,PS21,US1"
+F9920VY,Low Power - LPT Assy & /A,1,,,Q,,,,,,,,A,,SLT
+F9920VP,Brain/Hart - LPT Assy. w/o Cert & /A,1,,,"D,J",,,,,,,,A,,"CS1,CU1,FS1,FU1,GS11,GS12,GS21,GU11,GU12,GU21,J12,JS4,KS21,KU22,NS21,PS21,SLT,SU21,SU22,US1"
+F9921VF,Field/Profi Bus - LPT Assy. w/o Cert & /A,1,,"EJA510E,EJA530E",G,,,,,,,,A,,"CS15,FS15,GS16,KS26,NS25,SS26"
+F9920VL,LPT ASSY,1,,,"D,J",,,,,,,,"A,J12",,"CS1,CU1,FS1,FU1,GS11,GS12,GS21,GU11,GU12,GU21,JS4,NS21,PS21,SU21,SU22,US1"
+F9920TS,Brain/Hart - LPT Assy. with Cert F9920TT,1,,,"D,J",,,,,,,,SLT,,"A,CS1,CU1,FS1,FU1,GS11,GS12,GS21,GU11,GU12,GU21,J12,JH05,JS4,KS21,KU22,NS21,PS21,SU21,SU22,US1"
+F9920VS,Brain/Hart - LPT Assy. with Cert & /A F9920VT,1,,,"D,J",,,,,,,,"A,SLT",,"CS1,CU1,FS1,FU1,GS11,GS12,GS21,GU11,GU12,GU21,J12,JH05,JS4,KS21,KU22,NS21,PS21,SU21,SU22,US1"
+F9921TC,TERMINAL ASSY,1,,,"F,G",,,,,,,,GS16,,A
+F9921VC,LPT ASSY,1,,,"F,G",,,,,,,,"A,GS16",,
+F9921TF,Field/Profi Bus - LPT Assy. w/o Cert,1,,,F,,,,,,,,,,"A,CS15,FS15,GS16,KS26,NS25,SS26"
+F9921TG,Field/Profi Bus - LPT Assy. with Cert,1,,,"F,G",,,,,,,,,"CS15,FS15,KS26,NS25,SS26",A
+F9921VF,Field/Profi Bus - LPT Assy. w/o Cert & /A,1,,,F,,,,,,,,A,,"CS15,FS15,GS16,KS26,NS25,SS26"
+F9921VG,Field/Profi Bus - LPT Assy. with Cert & /A,1,,,"F,G",,,,,,,,A,"CS15,FS15,KS26,NS25,SS26",
+F9342NJ,2-Core Cable,1,,,"D,F,G,J",,,,,,,,,,
+F9920LU,LCD Assy. w/o SW,1,,,,,,,,,D,,,,
+F9920LV,LCD Assy. with SW,1,,,,,,,,,E,,,,
+F9342MK,Nut for LCD Assy.,2,,,,,,,,,"D,E",,,,
+F9342NF,FF LABEL,0,,,F,,,,,,,,,,"VE,VR"
+F9342NG,PROFIBUS LABEL,0,,,G,,,,,,,,,,"VE,VR"
+F9903HM,CASE,1,,"EJA510E,EJA530E",,,,,2,A,,,X2,,
+F9903HJ,CASE,1,,"EJA510E,EJA530E",,,,,2,"2,C",,,X2,,
+F9903HK,CASE,1,,"EJA510E,EJA530E",,,,,2,"4,D",,,X2,,
+F9903HL,CASE,1,,"EJA510E,EJA530E",,,,,2,"2,C",,,X2,"CF1,CS1,CS15,CU1,FF1,FS1,FS15,FU1,KF22,KS21,KS26,KU22,PF22,PF23,PS21,SF2,SF22,UF1,US1",
+F9903HL,CASE,1,,"EJA510E,EJA530E",,,,,2,"2,C",,,X2,"GF11,GF12,GF21,GS11,GS12,GS16,GS21,GU11,GU12,GU21,NF2,NF21,NS21,NS25,SS26,SU21,SU22",
+F9913WC,CASE,1,,"EJA510E,EJA530E",,,,,2,A,,,,,X2
+F9913WG,"Case 2, EC-1/2 NPT (E-Conn 2 or C)",1,,"EJA510E,EJA530E",,,,,2,"2,C",,,,,X2
+F9913WG,"Case 2, EC-1/2 NPT (E-Conn 2 or C)",-1,,"EJA510E,EJA530E",,,,,2,"2,C",,,,"CF1,CS1,CS15,CU1,FF1,FS1,FS15,FU1,GF11,GF12,GF21,GS11,GS12,GS16,GS21,GU11,GU12,GU21",X2
+F9913WG,"Case 2, EC-1/2 NPT (E-Conn 2 or C)",-1,,"EJA510E,EJA530E",,,,,2,"2,C",,,,"KF22,KS21,KS26,KU22,NF2,NF21,NS21,NS25,PF22,PF23,PS21,SF2,SF22,SS26,SU21,SU22,UF1,US1",X2
+F9913WJ,"Case 2, EC-M20 (E-Conn 4 or D)",1,,"EJA510E,EJA530E",,,,,2,"4,D",,,,,X2
+F9913WH,"Case 2, EC-1/2 NPT with Cert (E-Conn 2 or C)",1,,"EJA510E,EJA530E",,,,,2,"2,C",,,,"CF1,CS1,CS15,CU1,FF1,FS1,FS15,FU1,KF22,KS21,KS26,KU22,PF22,PF23,PS21,SF2,SF22,UF1,US1",X2
+F9913WH,"Case 2, EC-1/2 NPT with Cert (E-Conn 2 or C)",1,,"EJA510E,EJA530E",,,,,2,"2,C",,,,"GF11,GF12,GF21,GS11,GS12,GS16,GS21,GU11,GU12,GU21,NF2,NF21,NS21,NS25,SS26,SU21,SU22",X2
+F9913QA,"Case 1, EC-G1/2",1,2,,,,,,1,0,,,,,X2
+F9913QC,CASE,1,2,,,,,,1,"5,A",,,,,X2
+F9913QG,"Case 1, EC-1/2 NPT,  w/o cert",1,2,,,,,,1,"2,7,C",,,,,X2
+F9913QG,"Case 1, EC-1/2 NPT,  w/o cert",-1,2,,,,,,1,"2,7,C",,,,"CF1,CS1,CS15,CU1,FF1,FS1,FS15,FU1,GF11,GF12,GF21,GS11,GS12,GS16,GS21,GU11,GU12,GU21",X2
+F9913QG,"Case 1, EC-1/2 NPT,  w/o cert",-1,2,,,,,,1,"2,7,C",,,,"KF22,KS21,KS26,KU22,NF2,NF21,NS21,NS25,PF22,PF23,PS21,SF2,SF22,SS26,SU21,SU22,UF1,US1",X2
+F9913QJ,"Case 1, EC-M20",1,2,,,,,,1,"4,9,D",,,,,X2
+F9913QH,"Case 1, EC-1/2 NPT with Cert",1,2,,,,,,1,"2,7,C",,,,"CF1,CS1,CS15,CU1,FF1,FS1,FS15,FU1,KF22,KS21,KS26,KU22,PF22,PF23,PS21,SF2,SF22,UF1,US1",X2
+F9913QH,"Case 1, EC-1/2 NPT with Cert",1,2,,,,,,1,"2,7,C",,,,"GF11,GF12,GF21,GS11,GS12,GS16,GS21,GU11,GU12,GU21,NF2,NF21,NS21,NS25,SS26,SU21,SU22",X2
+F9913RN,CASE,1,2,,,,,,1,0,,,X2,,
+F9913RQ,CASE,1,2,,,,,,1,"5,A",,,X2,,
+F9913RU,"Case 1, EC-1/2 NPT,  w/o cert & /X2",1,2,,,,,,1,"2,7,C",,,X2,,
+F9913RU,"Case 1, EC-1/2 NPT,  w/o cert & /X2",-1,2,,,,,,1,"2,7,C",,,X2,"CF1,CS1,CS15,CU1,FF1,FS1,FS15,FU1,GF11,GF12,GF21,GS11,GS12,GS16,GS21,GU11,GU12,GU21",
+F9913RU,"Case 1, EC-1/2 NPT,  w/o cert & /X2",-1,2,,,,,,1,"2,7,C",,,X2,"KF22,KS21,KS26,KU22,NF2,NF21,NS21,NS25,PF22,PF23,PS21,SF2,SF22,SS26,SU21,SU22,UF1,US1",
+F9913RW,"Case 1, EC-M20 with /X2",1,2,,,,,,1,"4,9,D",,,X2,,
+F9913RV,"Case 1, EC-1/2 NPT with Cert & /X2",1,2,,,,,,1,"2,7,C",,,X2,"CF1,CS1,CS15,CU1,FF1,FS1,FS15,FU1,KF22,KS21,KS26,KU22,PF22,PF23,PS21,SF2,SF22,UF1,US1",
+F9913RV,"Case 1, EC-1/2 NPT with Cert & /X2",1,2,,,,,,1,"2,7,C",,,X2,"GF11,GF12,GF21,GS11,GS12,GS16,GS21,GU11,GU12,GU21,NF2,NF21,NS21,NS25,SS26,SU21,SU22",
+F9913AJ,"Case 3, EC-M20 (E-conn 4 or 9 or D)",1,2,"EJA510E,EJA530E",,,,,3,"4,9,D",,,,,X2
+F9913AL,"Case 3, EC-1/2 NPT (E-Conn 2 or C)",1,2,"EJA510E,EJA530E",,,,,3,"2,7,C",,,,,X2
+F9913BJ,CASE,1,2,"EJA510E,EJA530E",,,,,3,"4,9,D",,,X2,,
+F9913BL,CASE,1,2,"EJA510E,EJA530E",,,,,3,"2,7,C",,,X2,,
+F9910LS,Terminal Block,1,,,,,,,"1,3",,,,,,
+F9910LS,Terminal Block,1,,,,,,,2,,,,,,
+Y9308JY,Terminal Block holding Screw,2,,,,,,,,,,,,,
+R1200BA,LOCTITE 222  49591,0,,,,,,,,,,,,,"CF1,CS1,CS15,CU1,FF1,FS1,FS15,FU1,HE,SF2,SS26,SU21"
+F9341JX,SILICONE RUBBER,0,,,,,,,,,,,,"CF1,CS1,CS15,CU1,FF1,FS1,FS15,FU1",
+F9341JX,SILICONE RUBBER,0,,,,,,,,,,,,"SF2,SS26,SU21",HE
+A1462CC,Feedthrough Capacitor for Hart & Brain,2,,,"D,J,Q",,,,,,,,,,HE
+F9342YC,Feedthrough Capacitor when /HE,2,,,"D,J,Q",,,,,,,,HE,"CF1,CS1,CS15,CU1,FF1,FS1,FS15,FU1",
+F9342YB,Feedthrough Capacitor for FF & Profi bus,2,,,"F,G",,,,,,,,,,HE
+F9342YC,Feedthrough Capacitor when /HE,2,,,"F,G",,,,,,,,HE,"CF1,CS1,CS15,CU1,FF1,FS1,FS15,FU1",
+F9913ME,Capacitor for /HE option,2,,"EJA510E,EJA530E",,,,,,,,,HE,,"CF1,CS1,CS15,CU1,FF1,FS1,FS15,FU1"
+Y9501WL,Washer for feed through capcitor,3,,,,,,,,,,,,,
+F9341JW,Ext. Gr. Screw washer for  case 1 or 2 or 3 with Cert.,1,,,,,,,,,,,,"GF11,GF12,GF21,GS11,GS12,GS16,GS21,GU11,GU12,GU21,JF5,KF22,KN26,KS21,KS26,KU22,NF2,NF21,NS21,NS25,PF22,PF23,PS21,SF2,SF22,SS26,SU21,SU22,UF1,US1",
+G9303NC,O-Ring for zero adjust screw,1,,,,,,,,,,,,,HE
+F9900GV,O-Ring for zero adjust screw when /HE,1,,,,,,,,,,,HE,,
+F9270BJ,Shaft - Zero adjust Screw,1,,,,,,,"1,3",,,,,,HC
+F9900RL,Shaft - Zero adjust Screw for Case-2 or when /HC option,1,,,,,,,"1,3",,,,HC,,
+F9900RL,Shaft - Zero adjust Screw for Case-2 or when /HC option,1,,,,,,,2,,,,,,
+Y9812PS,Pin for Zero adjust screw,1,,,,,,,,,,,,,
+F9270BK,Collar for zero adjust screw,1,,,,,,,,,,,,,
+F9900GZ,"Screw for fixing zero screw cover, Ext. Gr., Int. Gr. & Back board for Case 1 or 2 or Int. Gr. & Back board for Case 3",1,,,,,,,"1,2",,,,,,"GF11,GF12,GF21,GS11,GS12,GS16,GS21,GU11,GU12,GU21,JF5,KF22,KN26,KS21,KS26,KU22,NF2,NF21,NS21,NS25,PF22,PF23,PS21,SF2,SF22,SS26,SU21,SU22,UF1,US1"
+F9341JZ,Ext. Gr. Screw & clamp for  case 1 or 2 with Cert.,1,,,,,,,"1,2",,,,,"GF11,GF12,GF21,GS11,GS12,GS16,GS21,GU11,GU12,GU21,JF5,KF22,KN26,KS21,KS26,KU22,NF2,NF21,NS21,NS25,PF22,PF23,PS21,SF2,SF22,SS26,SU21,SU22,UF1,US1",
+F9913MC,Ext. Gr. Screw for Case 3,1,,,,,,,3,,,,,,"GF11,GF12,GF21,GS11,GS12,GS16,GS21,GU11,GU12,GU21,KF22,KN26,KS21,KS26,KU22,NF2,NF21,NS21,NS25,PF22,PF23,PS21,SF2,SF22,SS26,SU21,SU22,UF1,US1"
+F9913MD,Ext. Gr. Screw & clamp for  Case 3 with Cert.,1,,,,,,,3,,,,,"GF11,GF12,GF21,GS11,GS12,GS16,GS21,GU11,GU12,GU21,KF22,KN26,KS21,KS26,KU22,NF2,NF21,NS21,NS25,PF22,PF23,PS21,SF2,SF22,SS26,SU21,SU22,UF1,US1",
+A1462CC,Feedthrough Capacitor for Hart & Brain,1,,,"D,J,Q",,,,,,,,,,HE
+F9342YC,Feedthrough Capacitor when /HE,1,,,"D,J,Q",,,,,,,,HE,"CF1,CS1,CS15,CU1,FF1,FS1,FS15,FU1",
+F9342YB,Feedthrough Capacitor for FF & Profi bus,1,,,"F,G",,,,,,,,,,HE
+F9342YC,Feedthrough Capacitor when /HE,1,,,"F,G",,,,,,,,HE,"CF1,CS1,CS15,CU1,FF1,FS1,FS15,FU1",
+F9913ME,Capacitor for /HE option,1,,"EJA510E,EJA530E",,,,,,,,,HE,,"CF1,CS1,CS15,CU1,FF1,FS1,FS15,FU1"
+F9900GZ,"Screw for fixing zero screw cover, Ext. Gr., Int. Gr. & Back board for Case 1 or 2 or Int. Gr. & Back board for Case 3",1,,,,,,,"1,2",,,,,,
+F9913MA,Screw for fixing zero screw cover for Case 3,1,,,,,,,3,,,,,,
+F9913VK,COVER,1,,,,,,,1,,N,,P1,,X2
+F9913VL,COVER,1,,,,,,,1,,N,,P2,,X2
+F9913VM,COVER,1,,,,,,,1,,N,,P7,,X2
+F9913VP,COVER,1,,,,,,,1,,N,,PR,,X2
+F9913JT,METER COVER,1,,,,,,,1,,"D,E",,P1,,"HE,X2"
+F9913JU,METER COVER,1,,,,,,,1,,"D,E",,P2,,"HE,X2"
+F9913JV,METER COVER,1,,,,,,,1,,"D,E",,P7,,"HE,X2"
+F9913JX,Meter cover assembly  for PR option (Red colour),1,,,,,,,1,,"D,E",,PR,,"HE,X2"
+F9913KT,METER COVER ASSY,1,,"EJA510E,EJA530E",,,,,1,,"D,E",,"HE,P1",,X2
+F9913KU,METER COVER ASSY,1,,"EJA510E,EJA530E",,,,,1,,"D,E",,"HE,P2",,X2
+F9913KV,METER COVER ASSY,1,,"EJA510E,EJA530E",,,,,1,,"D,E",,"HE,P7",,X2
+F9913KX,METER COVER ASSY,1,,"EJA510E,EJA530E",,,,,1,,"D,E",,"HE,PR",,X2
+F9913SC,COVER,1,,,,,,,2,,N,,,,"PR,X2"
+F9913SE,"Meter Cover for Case""2""",1,,,,,,,2,,"D,E",,,,"HE,PR,X2"
+F9913SD,COVER,1,,,,,,,2,,N,,PR,,X2
+F9913JY,METER COVER,1,,,,,,,2,,"D,E",,PR,,"HE,X2"
+F9913KZ,METER COVER ASSY,1,,"EJA510E,EJA530E",,,,,2,,"D,E",,HE,,"PR,X2"
+F9913KY,METER COVER ASSY,1,,"EJA510E,EJA530E",,,,,2,,"D,E",,"HE,PR",,X2
+F9913GX,METER COVER ASSY,1,,"EJA510E,EJA530E",,,,,3,,"D,E",,PR,,"HE,P1,P2,P7,X2"
+F9913HX,METER COVER ASSY,1,,"EJA510E,EJA530E",,,,,3,,"D,E",,"HE,PR",,"P1,P2,P7,X2"
+F9913DP,BLIND COVER,1,,"EJA510E,EJA530E",,,,,3,,N,,PR,,"P1,P2,P7,X2"
+F9913TS,"Meter Cover for Case""1""",1,2,,,,,,1,,"D,E",,,,"HE,P1,P2,P7,PR,X2"
+F9913TS,"Meter Cover for Case""1""",1,2,"EJA510E,EJA530E",,,,,1,,"D,E",,HE,,"P1,P2,P7,PR,X2"
+F9913VS,"Meter Cover for Case""1"" with /X2",1,2,,,,,,1,,"D,E",,X2,,"HE,P1,P2,P7,PR"
+F9913KS,METER COVER ASSY,1,2,"EJA510E,EJA530E",,,,,1,,"D,E",,"HE,X2",,"P1,P2,P7,PR"
+F9913CS,"Meter Cover for Case""3""",1,2,"EJA510E,EJA530E",,,,,3,,"D,E",,,,"HE,P1,P2,P7,PR,X2"
+F9913HA,METER COVER ASSY,1,2,"EJA510E,EJA530E",,,,,3,,"D,E",,HE,,"P1,P2,P7,PR,X2"
+F9913GS,METER COVER ASSY,1,2,"EJA510E,EJA530E",,,,,3,,"D,E",,X2,,"HE,P1,P2,P7,PR"
+F9913HS,METER COVER ASSY,1,2,"EJA510E,EJA530E",,,,,3,,"D,E",,"HE,X2",,"P1,P2,P7,PR"
+F9913TJ,Case 1 - Blind Cover,1,2,,,,,,1,,N,,,,"P1,P2,P7,PR,X2"
+F9913VJ,Case 1 - Blind Cover with /X2,1,2,,,,,,1,,N,,X2,,"P1,P2,P7,PR"
+F9913CJ,BLIND COVER,1,2,"EJA510E,EJA530E",,,,,3,,N,,,,"P1,P2,P7,PR,X2"
+F9913DJ,BLIND COVER,1,2,"EJA510E,EJA530E",,,,,3,,N,,X2,,"P1,P2,P7,PR"
+F9805ZT,LABEL,1,,,,,,,,,,,,,
+F9903HF,BLIND COVER,1,,"EJA510E,EJA530E",,,,,2,,N,,X2,,"P1,P2,P7,PR"
+F9903HG,METER COVER ASSY,1,,"EJA510E,EJA530E",,,,,2,,"D,E",,X2,,"HE,P1,P2,P7,PR"
+F9903HH,METER COVER ASSY,1,,"EJA510E,EJA530E",,,,,2,,"D,E",,"HE,X2",,"P1,P2,P7,PR"
+F9900GQ,Blind Plug - SS304 G1/2,1,,,,,,,1,5,,,,,HE
+F9900GL,PLUG,1,,,,,,,"1,2",A,,,,,
+F9913MY,Blind Plug - SS304 1/2 NPT (E-Conn 7),1,,,,,,,"1,3",7,,,,,
+F9913MZ,Blind Plug - SS304 M20,1,,,,,,,"1,2,3",C,,,,,
+F9900GP,Blind Plug - SS304 M20,1,,,,,,,"1,3",9,,,,,HE
+F9900GK,Blind Plug - SS316 M20,1,,,,,,,"1,2,3",D,,,,,
+F9900GY,PLUG,1,,"EJA510E,EJA530E",,,,,1,5,,,HE,,
+F9900GX,PLUG,1,,"EJA510E,EJA530E",,,,,"1,3",9,,,HE,,
+G9330DB,Red cap for EC (EJA110 or 430 or 530) & Process connection (EJA530 - 4),1,,,,,,,,"2,4",,,,,
+G9330DB,Red cap for EC (EJA110 or 430 or 530) & Process connection (EJA530 - 4),1,,,,,,,,"0,2,4,5,7,9,A,C,D",,,,,PP
+F9900GB,Gasket for SS316 Blind Plug (M20),1,,,,,,,,"A,D",,,,,HE
+F9900GW,O-RING,1,,,,,,,,"A,D",,,HE,,
+F9275EJ,BALL,1,,,,,,P,,,,,,,
+F9344XA,SCREW,1,,,,,,P,,,,,,,
+F9299ZZ,SILICONE RUBBER,0,,,,,,P,,,,,,,
+F9300AF,Capsule Oil seal hole closing plate,1,,,,,,P,,,,,,,
+F9940WF,Pipe Assy.  for EJA530 - A or B or C,1,,EJA530E,,"A,B,C",,,,,,,,,
+F9900SF,"Mounting Bracket - SS316 for EJA530
+ or for bottom PC (EJA110 or 430)",1,,,,,,,,,,L,,,
+G9330DB,Red cap for EC (EJA110 or 430 or 530) & Process connection (EJA530 - 4),1,,,,,,"2,4",,,,,,,
+G9330CB,White cap for Process connection (EJA530 - 7 or 8),1,,,,,,"6,7,8,A",,,,,,,
+X9947QF,796A981 CAP,1,,,,,,9,,,,,,,
+F9299ZZ,SILICONE RUBBER,0,,,,,H,,,,,,,,
+F9940WJ,Hook  for EJA530 - D capsule,1,,,,D,,,,,,,,,
+F9275ZZ,Oil free label for /K1 or /K2 option,1,,,,,,,,,,,,"K1,K2,K41,K42",
+F9900MK,LABEL,1,,,,,,,,,,,,"K45,K46,K5,K6",
+F9340ND,Oil prohibuted use label (to past on Trx. Poly cover incase of /K1 or /K2 or /K5 or /K6),1,,,,,,,,,,,,"K1,K2,K41,K42,K45,K46,K5,K6",
+C1016EZ,SOLID SUB-MATERIALS,1,,,,,,,,,,,,"K45,K46,K5,K6",
+X9930CX,POLY BAG,1,,,,,,,,,,,,"K1,K2,K41,K42,K45,K46,K5,K6",
+F9900RM,SS316 Tag plate when /N4,1,,,,,,,"1,3",,,,,N4,
+F9900RM,SS316 Tag plate when /N4,1,,,,,,,2,,,,,N4,
+F9900GG,Ring for Tag plate when /N4,1,,,,,,,,,,,N4,,
+F9900RF,Certification Tag Plate,1,,,,,,,,,,,,"FU1,FS1,FF1,CU1,CS1,CF1,NF2,KS21,KF22,KU22,KN26,SF2,SF22,NS21,PF22,PS21,GF11,GS11,GS16,GU11,SU21,SU22,UF1,US1,JS4,NS25,NF21,GF21,GS21,GU21,GF12,GS12,GU12,PF23,KS26,SS26,FS15,CS15,JF5",
+F9900RG,"Screw - Name Plate, Tag Plate & Cert. Tag Plate for Case-1 or 3",2,,,,,,,"1,3",,,,,"CF1,CS1,CS15,CU1,FF1,FS1,FS15,FU1,JF5,JS4,NF2,NF21,NS21,NS25,SF2,SS26,SU21,SU22",
+F9900RG,"Screw - Name Plate, Tag Plate & Cert. Tag Plate for Case-1 or 3",2,,,,,,,"1,3",,,,,"GF11,GF12,GF21,GS11,GS12,GS16,GS21,GU11,GU12,GU21,KF22,KN26,KS21,KS26,KU22,PF22,PF23,PS21,SF22,UF1,US1",
+F9900RR,"Screw - Name Plate, Tag Plate & Cert. Tag Plate for Case-2",2,,,,,,,2,,,,,"CF1,CS1,CS15,CU1,FF1,FS1,FS15,FU1,NF2,NF21,NS21,NS25,SF2,SS26,SU21,SU22",
+F9900RR,"Screw - Name Plate, Tag Plate & Cert. Tag Plate for Case-2",2,,,,,,,2,,,,,"GF11,GF12,GF21,GS11,GS12,GS16,GS21,GU11,GU12,GU21,KF22,KN26,KS21,KS26,KU22,PF22,PF23,PS21,SF22,UF1,US1",
+F9900RP,Cover lock screw (bolt) incase of Flame proof cert.- case 1 or 2,2,,,,,,,"1,2",,,,,"GF11,GF12,GF21,GU11,GU12,GU21,JF3,JF5,KF22,KU22,NF2,NF21,PF22,PF23,SF2,SF22,SU21,SU22,UF1",
+F9913MB,Cover lock screw (bolt) incase of Flame proof cert. - case 3,2,,,,,,,3,,,,,"GF11,GF12,GF21,GU11,GU12,GU21,JF3,KF22,KU22,NF2,NF21,PF22,PF23,SF2,SF22,SU21,SU22,UF1",
+F9900LK,LABEL,1,,,,,S,,1,,N,,JF3,,
+F9900LL,LABEL,1,,,,,S,,1,,"D,E",,JF3,,
+F9900LM,LABEL,1,,,,,H,,1,,N,,JF3,,
+F9900LN,LABEL,1,,,,,H,,1,,"D,E",,JF3,,
+F9900LT,LABEL,1,,,"D,J",,,,1,,,,JS4,,
+F9900NY,LABEL,1,,EJA530J,"D,E,F,J",,,,1,,N,,JF5,,
+F9900NZ,LABEL,1,,EJA530J,"D,E,F,J",,,,1,,"D,E",,JF5,,
+F9341KQ,LABEL,1,,,,,,,1,,,,JF3,,
+G9601AM,GLAND,1,,,,,,,,"0,5",,,G11,,
+G9601AM,GLAND,2,,,,,,,,"0,5",,,G12,,
+B1030EN,GLAND,1,,EJA530J,,,,,,"0,A",,,V11,,
+B1030EN,GLAND,2,,EJA530J,,,,,,"0,A",,,V12,,
+G9339AB,CARD,1,,,,,,,,,,,G11,,
+G9339AB,CARD,2,,,,,,,,,,,G12,,
+F9810AJ,CARD,1,,EJA530J,,,,,,"0,A",,,V11,,
+F9810AJ,CARD,2,,EJA530J,,,,,,"0,A",,,V12,,
+F9910LZ,LABEL,1,,,,,,,,"4,9,D",,,,"FF1,FU1",
+F9220NX,ENGLISH IM,1,,,,,,,,,,,JH06,,
+F9096KK,LABEL,1,,"EJA510E,EJA530E",,,,,,,,,,"UF1,US1",
+F9901DA,EJA***E UK-DOC,1,,"EJA510E,EJA530E",,,,,,,,,UK,"KF22,KN26,KS21,KS26,KU22",
+F9901BT,EJA-E SERIES EU-DOC,1,,"EJA510E,EJA530E",,,,,,,,,,"KF22,KN26,KS21,KS26,KU22",
+B1030EN,GLAND,1,,,,,,,,"0,5,A",,,NF2,,
+F9810AJ,CARD,1,,,,,,,,"0,5,A",,,NF2,,
+F9901EB,IM,1,,"EJA510E,EJA530E,EJA530J",,,,,,,,,,"NF2,NF21,NS21,NS25",
+F9901EA,IM,1,,"EJA510E,EJA530E",,,,,,,,,,"PF22,PF23,PS21",
+F9901EC,IM,1,,"EJA510E,EJA530E",,,,,,,,,,"UF1,US1",
+F9901EH,IM,1,,"EJA510E,EJA530E,EJA530J","D,J",,,,,,,,J12,,
+F9901EL,IM,1,,"EJA510E,EJA530E,EJA530J",,,,,,,,,JH05,,SLT
+F9900GK,Blind Plug - SS316 M20,1,,,,,,,"1,2,3",D,,,PP,,
+F9900GL,PLUG,1,,,,,,,"1,2",A,,,PP,,
+F9900GP,Blind Plug - SS304 M20,1,,,,,,,"1,3",9,,,PP,,HE
+F9900GQ,Blind Plug - SS304 G1/2,1,,,,,,,1,5,,,PP,,HE
+F9900GX,PLUG,1,,"EJA510E,EJA530E",,,,,"1,3",9,,,"HE,PP",,
+F9900GY,PLUG,1,,,,,,,1,5,,,"HE,PP",,
+F9913MY,Blind Plug - SS304 1/2 NPT (E-Conn 7),1,,,,,,,"1,3",7,,,PP,,
+F9913MZ,Blind Plug - SS304 M20,1,,,,,,,"1,2,3",C,,,PP,,
+F9900GB,Gasket for SS316 Blind Plug (M20),1,,,,,,,,"A,D",,,PP,,HE
+F9900GW,O-RING,1,,,,,,,,"A,D",,,"HE,PP",,
+F9341JA,Meter cover Glass,1,2,,,,,,1,,"D,E",,,,"HE,P1,P2,P7,PR,X2"
+F9341JD,Spring for Meter cover,1,2,,,,,,1,,"D,E",,,,"HE,P1,P2,P7,PR,X2"
+F9341JE,Ring for Meter cover,1,2,,,,,,1,,"D,E",,,,"HE,P1,P2,P7,PR,X2"
+F9341JQ,O-ring for Meter cover W/O /HE ,1,2,,,,,,1,,"D,E",,,,"HE,P1,P2,P7,PR,X2"
+F9341JA,Meter cover Glass,1,2,,,,,,1,,"D,E",,X2,,"HE,P1,P2,P7,PR"
+F9341JD,Spring for Meter cover,1,2,,,,,,1,,"D,E",,X2,,"HE,P1,P2,P7,PR"
+F9341JE,Ring for Meter cover,1,2,,,,,,1,,"D,E",,X2,,"HE,P1,P2,P7,PR"
+F9341JQ,O-ring for Meter cover W/O /HE ,1,2,,,,,,1,,"D,E",,X2,,"HE,P1,P2,P7,PR"
+F9341JA,Meter cover Glass,1,,,,,,,2,,"D,E",,,,"HE,PR,X2"
+F9341JD,Spring for Meter cover,1,,,,,,,2,,"D,E",,,,"HE,PR,X2"
+F9341JE,Ring for Meter cover,1,,,,,,,2,,"D,E",,,,"HE,PR,X2"
+F9341JQ,O-ring for Meter cover W/O /HE ,1,,,,,,,2,,"D,E",,,,"HE,PR,X2"
+F9341JA,Meter cover Glass,1,2,"EJA510E,EJA530E",,,,,3,,"D,E",,,,"HE,P1,P2,P7,PR,X2"
+F9341JD,Spring for Meter cover,1,2,"EJA510E,EJA530E",,,,,3,,"D,E",,,,"HE,P1,P2,P7,PR,X2"
+F9341JE,Ring for Meter cover,1,2,"EJA510E,EJA530E",,,,,3,,"D,E",,,,"HE,P1,P2,P7,PR,X2"
+F9341JQ,O-ring for Meter cover W/O /HE ,1,2,"EJA510E,EJA530E",,,,,3,,"D,E",,,,"HE,P1,P2,P7,PR,X2"
+F9341JA,Meter cover Glass,1,2,"EJA510E,EJA530E",,,,,1,,"D,E",,HE,,"P1,P2,P7,PR,X2"
+F9341JD,Spring for Meter cover,1,2,"EJA510E,EJA530E",,,,,1,,"D,E",,HE,,"P1,P2,P7,PR,X2"
+F9341JE,Ring for Meter cover,1,2,"EJA510E,EJA530E",,,,,1,,"D,E",,HE,,"P1,P2,P7,PR,X2"
+F9900GU,Meter Cover Assy. O-ring for /HE,1,2,"EJA510E,EJA530E",,,,,1,,"D,E",,HE,,"P1,P2,P7,PR,X2"
+F9900SN,U Bolt Assy - SS316 U bolt for EJA110 or 430 or 530 (Big),1,,,,,,,,,,L,,,
+F9900SK,SS316 U bolt for EJA530 (Small),1,,,,,,,,,,L,,,

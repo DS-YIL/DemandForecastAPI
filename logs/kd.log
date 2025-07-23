@@ -1,0 +1,37 @@
+WARNING  2025-07-23 10:40:51,912  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  20796  Not Found: / 
+
+WARNING  2025-07-23 10:40:51,924  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  11308  Not Found: / 
+
+WARNING  2025-07-23 10:40:51,984  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  11308  Not Found: /favicon.ico 
+
+WARNING  2025-07-23 10:40:51,995  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  11308  Not Found: /favicon.ico 
+
+WARNING  2025-07-23 10:45:54,668  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  3400  Unauthorized: /user/login/ 
+
+ERROR  2025-07-23 10:51:34,627  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  20472  Internal Server Error: /data/ 
+Traceback (most recent call last):
+  File "D:\ForcastingProject\venv97\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\ForcastingProject\venv97\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\ForcastingProject\venv97\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\ForcastingProject\venv97\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\ForcastingProject\venv97\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\ForcastingProject\venv97\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\ForcastingProject\venv97\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\ForcastingProject\venv97\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "D:\ForcastingProject\venv97\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\ForcastingProject\datas\views\views.py", line 328, in post
+    individual_columns = missing_weeks(individual_columns)
+  File "D:\ForcastingProject\datas\views\views.py", line 317, in missing_weeks
+    [lst.append(x) for x in range(lst[0], lst[-1] + 1) if x not in lst]
+IndexError: list index out of range
+ERROR  2025-07-23 11:10:00,183  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  13152  Internal Server Error: /data/ 
+

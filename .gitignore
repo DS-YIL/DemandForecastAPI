@@ -1,0 +1,12 @@
+env_new/
+jupyter/
+gunicorn.pid
+requirements.txt
+datas/migrations
+users/migrations
+
+/venv
+/venv97
+*/__pycache__/*
+__pycache__/
+*.py[cod]
