@@ -35,3 +35,79 @@ Traceback (most recent call last):
 IndexError: list index out of range
 ERROR  2025-07-23 11:10:00,183  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  13152  Internal Server Error: /data/ 
 
+ERROR  2025-07-23 11:34:07,880  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  15532  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 11:34:28,981  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  20700  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 11:37:49,136  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  19552  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 11:38:06,502  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  19552  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 11:38:46,082  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  22704  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 11:39:02,428  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  22704  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 11:39:28,757  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  22704  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 11:44:33,408  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  8992  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 11:45:38,628  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  8992  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 11:47:59,423  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  8992  Internal Server Error: /data/ 
+
+WARNING  2025-07-23 12:26:59,343  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  21588  Unauthorized: /data/ 
+
+WARNING  2025-07-23 12:26:59,367  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  21588  Unauthorized: /datesofinputfiles/ 
+
+ERROR  2025-07-23 12:36:35,575  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  23076  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 12:36:59,900  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  23076  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 12:38:58,344  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  21696  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 12:40:40,313  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  21696  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 12:42:54,883  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  21696  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 12:44:53,518  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  20616  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 12:57:00,096  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  24124  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 12:58:55,259  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  24124  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 13:01:21,319  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  5920  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 13:01:36,554  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  5920  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 13:03:30,040  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  24320  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 13:06:01,175  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  17420  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 13:07:00,622  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  17420  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 13:09:24,148  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  8576  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 13:12:04,486  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  19100  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 13:12:30,690  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  19100  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 13:13:56,154  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  15252  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 13:15:33,094  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  13132  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 13:18:07,204  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  14768  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 13:18:30,910  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  14768  Internal Server Error: /data/ 
+
+WARNING  2025-07-23 14:21:13,328  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  11308  Unauthorized: /data/ 
+
+WARNING  2025-07-23 14:21:13,334  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  11308  Unauthorized: /datesofinputfiles/ 
+
+ERROR  2025-07-23 14:22:58,643  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  9136  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 14:25:12,642  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  23400  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 14:28:40,751  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  19460  Internal Server Error: /data/ 
+
+ERROR  2025-07-23 14:30:26,828  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  2572  Internal Server Error: /data/ 
+

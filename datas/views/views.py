@@ -61,17 +61,13 @@ class DataCrud(APIView):
         email = [TO_RECEIVER, ]
         cc = [CC_RECEIVER]
         html_data = data.to_html()
-        message = render_to_string('alertMail.html', {
-            'alertData': html_data,
-        })
-
+        message = render_to_string('alertMail.html', {'alertData': html_data,})
         msg = MIMEMultipart()
         msg['From'] = EMAIL_HOST_USER
         msg['To'] = ', '.join(email)
         msg['Cc'] = ', '.join(cc)
         msg['Subject'] = "Alert for CPA parts."
         msg.attach(MIMEText(message, 'html'))
-
         server = smtplib.SMTP(EMAIL_HOST, EMAIL_PORT)
         toEmail = email
         server.ehlo()
@@ -93,15 +89,13 @@ class DataCrud(APIView):
         try:
             for file in request.FILES:
                 file_name = default_storage.delete(os.path.abspath('static/inputFiles/{}.csv'.format(file)))
-                file_name = default_storage.save(os.path.abspath('static/inputFiles/{}.csv'.format(file)),
-                                                 request.FILES[file])
+                file_name = default_storage.save(os.path.abspath('static/inputFiles/{}.csv'.format(file)),request.FILES[file])
             thresholdValue = int(request.data['threshold'])
             pipeline_week_user = int(request.data['pipelineWeek'])
             required_week_user = int(request.data['requiredWeek'])
             queryset = inputFromUi.objects.all()
             if not queryset.exists():
-                inputFromUi.objects.filter().create(threshold=thresholdValue, pipelineWeek=pipeline_week_user,
-                                                    requiredWeek=required_week_user)
+                inputFromUi.objects.filter().create(threshold=thresholdValue, pipelineWeek=pipeline_week_user,requiredWeek=required_week_user)
             else:
                 inputFromUi.objects.filter().update(threshold=thresholdValue, pipelineWeek=pipeline_week_user,requiredWeek=required_week_user)
 
@@ -110,15 +104,16 @@ class DataCrud(APIView):
             mfg_list = pd.read_csv(os.path.abspath('static/inputFiles/manufacture.csv'), low_memory=False,encoding='unicode_escape')
             mfg_list_col = list(mfg_list.columns)
             mfg_dataset = input_data(mfg_list_col, 'manufacture')
-
             if not isinstance(mfg_dataset, list):
                 if mfg_dataset.status_code == 400:
                     data = mfg_dataset.data
                     return Response(data)
-
+            # data columns conversion and validations
             mfg_list = mfg_list.loc[mfg_list[mfg_dataset[0]].isin(['MC Awtd', 'Forecast', 'MC Recd', 'MC awtd', 'Sch.'])]
-            mfg_list[mfg_dataset[1]] = mfg_list[mfg_dataset[1]].astype('datetime64[ns]')
-            mfg_list[mfg_dataset[2]] = mfg_list[mfg_dataset[2]].astype('datetime64[ns]')
+            # mfg_list[mfg_dataset[1]] = mfg_list[mfg_dataset[1]].astype('datetime64[ns]')
+            mfg_list[mfg_dataset[1]] = pd.to_datetime(mfg_list[mfg_dataset[1]], errors='coerce', dayfirst=True)
+            # mfg_list[mfg_dataset[2]] = mfg_list[mfg_dataset[2]].astype('datetime64[ns]')
+            mfg_list[mfg_dataset[2]] = pd.to_datetime(mfg_list[mfg_dataset[2]], errors='coerce')
             mfg_list['CDD_Year'] = mfg_list[mfg_dataset[1]].dt.year
             mfg_list['Matl_Req_Year'] = mfg_list[mfg_dataset[2]].dt.year
             current_year = dt.date(dt.now()).year
@@ -144,7 +139,6 @@ class DataCrud(APIView):
             writer.save()
             found = mfg_list[mfg_list[mfg_dataset[4]].str.contains('Z')]
             mfg_list = mfg_list[~mfg_list[mfg_dataset[4]].str.contains('Z')]
-            # found.to_csv(os.path.join(path,r'Tokuchu.xlsx'))
             writer = pd.ExcelWriter(os.path.join(path, r'Tokuchu.xlsx'), engine='xlsxwriter')
             found.to_excel(writer, sheet_name='Sheet1')
             writer.save()
@@ -160,10 +154,8 @@ class DataCrud(APIView):
 
             proc_list['Final_Qty'] = proc_list.groupby(['PART NO.', 'Week'])['QTY'].transform('sum')
             proc_list = proc_list.drop_duplicates(subset=['PART NO.', 'Week'])
-
             proc_list = proc_list.pivot_table("Final_Qty", ["PART NO.", "PART NAME"], "Week")
             proc_list = proc_list.reset_index()
-
             current_week = dt.today().isocalendar()[1]
             columns_list = proc_list.columns.tolist()[2:]
             column_begin = [columns_list[i] for i in range(len(columns_list)) if columns_list[i] <= current_week]
@@ -174,68 +166,66 @@ class DataCrud(APIView):
                 if (len(individual_columns) >= 8): break;
 
             def missing_weeks(lst):
+                if not lst:  # if lst is empty
+                    return []
+
                 [lst.append(x) for x in range(lst[0], lst[-1] + 1) if x not in lst]
                 lst.sort()
+
                 if len(lst) < 8:
-                    [lst.append(x) for x in range(lst[-1], lst[-1] + len(lst)) if x not in lst]
+                    [lst.append(x) for x in range(lst[-1] + 1, lst[-1] + 1 + (8 - len(lst))) if x not in lst]
+
                 lst = lst[0:8]
+
                 for x in range(len(lst)):
                     if lst[x] > 52:
-                        lst[x] = lst[x] - 52
+                        lst[x] -= 52
                     if lst[x] not in columns_list:
                         proc_list[lst[x]] = 0
+
                 return lst
 
+            # filters the weeks 'usually get index out of range'
             individual_columns = missing_weeks(individual_columns)
-            column_end = [i for i in columns_list if i > individual_columns[len(individual_columns) - 1]]
+            if individual_columns:
+                column_end = [i for i in columns_list if i > individual_columns[-1]]
+            else:
+                column_end = []
 
             proc_list['End'] = proc_list[column_end].sum(axis=1)
             proc_list['Total Required'] = proc_list[columns_list].sum(axis=1)
-
-            proc_list = proc_list[
-                ['PART NO.', 'PART NAME'] + ['Current'] + individual_columns + ['End', 'Total Required']]
+            proc_list = proc_list[['PART NO.', 'PART NAME'] + ['Current'] + individual_columns + ['End', 'Total Required']]
             proc_list.columns = proc_list.columns.map(str)
 
-            # inv_list = pd.read_csv(value_list[1], engine='python')
-            inv_list = pd.read_csv(os.path.abspath('static/inputFiles/inventory.csv'), low_memory=False,
-                                   encoding='unicode_escape')
-
+            ############################## started for inventory csv ##################################################
+            inv_list = pd.read_csv(os.path.abspath('static/inputFiles/inventory.csv'), low_memory=False,encoding='unicode_escape')
             inventory_col = list(inv_list.columns)
             inventory_dataset = input_data(inventory_col, 'inventory')
-
             if not isinstance(inventory_dataset, list):
                 if inventory_dataset.status_code == 400:
                     data = inventory_dataset.data
                     return Response(data)
 
             inv_list['Final Parts'] = inv_list[inventory_dataset[1]].fillna(inv_list[inventory_dataset[0]])
-            inv_list["Total"] = inv_list[inventory_dataset[2]].str.replace(",", "").astype(int)
+            # inv_list["Total"] = inv_list[inventory_dataset[2]].str.replace(",", "").astype(int)
+            inv_list["Total"] = (inv_list[inventory_dataset[2]].astype(str).str.replace(",", "", regex=False).str.replace("-", "0", regex=False).fillna("0").astype(float))
             inv_list = inv_list[['Final Parts', 'Total']]
             inv_list['Stock Qty'] = inv_list.groupby(['Final Parts'])['Total'].transform('sum')
             inv_list = inv_list.drop_duplicates(subset=['Final Parts'])
             inv_list = inv_list.rename(index=str, columns={"Final Parts": "PART NO."})
             inv_list.drop('Total', axis=1, inplace=True)
 
-            # ----------------InventryGraph data -----------------
-
-            inventory = pd.read_csv(os.path.abspath('static/inputFiles/inventory.csv'), low_memory=False,
-                                    encoding='unicode_escape')
-
-            inventory[inventory_dataset[3]] = inventory[inventory_dataset[3]].str.split(',').str.join('').astype(
-                'float64')
-            inventory[inventory_dataset[2]] = inventory[inventory_dataset[2]].str.split(',').str.join('').astype(
-                'float64')
+            ############################## started for inventory graph csv ##################################################
+            inventory = pd.read_csv(os.path.abspath('static/inputFiles/inventory.csv'), low_memory=False,encoding='unicode_escape')
+            inventory[inventory_dataset[3]] = inventory[inventory_dataset[3]].str.split(',').str.join('').astype('float64')
+            inventory[inventory_dataset[2]] = (inventory[inventory_dataset[2]].astype(str).str.replace(',', '', regex=False).replace('-', '0').replace('nan', '0').astype(float) )
             inventory["Total stock value"] = inventory[inventory_dataset[2]] * inventory[inventory_dataset[3]]
-            CPA110Y = inventory[inventory[inventory_dataset[1]].str.contains(r'CPA110Y', na=False)][
-                inventory_dataset[2]].sum()
-            CPA430Y = inventory[inventory[inventory_dataset[1]].str.contains(r'CPA430Y', na=False)][
-                inventory_dataset[2]].sum()
-            CPA530Y = inventory[inventory[inventory_dataset[1]].str.contains(r'CPA530Y', na=False)][
-                inventory_dataset[2]].sum()
+            CPA110Y = inventory[inventory[inventory_dataset[1]].astype(str).str.contains(r'CPA110Y', na=False)][inventory_dataset[2]].sum()
+            CPA430Y = inventory[ inventory[inventory_dataset[1]].astype(str).str.contains(r'CPA430Y', na=False)][inventory_dataset[2]].sum()
+            CPA530Y = inventory[inventory[inventory_dataset[1]].astype(str).str.contains(r'CPA530Y', na=False)][inventory_dataset[2]].sum()
             CPA_Tot = CPA110Y + CPA430Y + CPA530Y
             Total_inventory = inventory["Total stock value"].sum()
-            KDP_cost = inventory[~inventory[inventory_dataset[1]].str.contains('CPA', na=False)][
-                "Total stock value"].sum()
+            KDP_cost = inventory[~inventory[inventory_dataset[1]].astype(str).str.contains('CPA', na=False)]["Total stock value"].sum()
             CPA_cost = Total_inventory - KDP_cost
             dataSet = {
                 'CPA110Y': CPA110Y,
@@ -260,13 +250,11 @@ class DataCrud(APIView):
                 serializer = InventoryGraphSerializer(data=dataSet)
             if serializer.is_valid():
                 serializer.save()
-            # ----------------InventryGraph data ----------------- End
 
+            ############################## started for cpaFob csv ##################################################
             cpa_list = pd.read_csv(os.path.abspath('static/inputFiles/cpaFob.csv'), engine='python')
-
             cpa_col = list(cpa_list.columns)
             cpa_dataset = input_data(cpa_col, 'cpaFob')
-
             if not isinstance(cpa_dataset, list):
                 if cpa_dataset.status_code == 400:
                     data = cpa_dataset.data
@@ -277,18 +265,15 @@ class DataCrud(APIView):
             cpa_list = cpa_list.rename(index=str, columns={cpa_dataset[0]: "Purchase_Order", cpa_dataset[1]: "Item"})
             cpa_list['Purchase_Order'] = cpa_list['Purchase_Order'].astype(str)
             cpa_list = cpa_list[cpa_list['Purchase_Order'].str.startswith('4')]
-            # print(cpa_list)
-            gr_list = pd.read_csv(os.path.abspath('static/inputFiles/grList.csv'), low_memory=False,
-                                  encoding='unicode_escape')
 
+            ############################## started for grList csv ##################################################
+            gr_list = pd.read_csv(os.path.abspath('static/inputFiles/grList.csv'), low_memory=False,encoding='unicode_escape')
             gr_list_col = list(gr_list.columns)
             gr_dataset = input_data(gr_list_col, 'grList')
-
             if not isinstance(gr_dataset, list):
                 if gr_dataset.status_code == 400:
                     data = gr_dataset.data
                     return Response(data)
-
             gr_list = gr_list[[gr_dataset[0], gr_dataset[1]]]
             gr_list = gr_list.rename(index=str, columns={gr_dataset[0]: "Purchase_Order"})
             gr_list.Purchase_Order = gr_list.Purchase_Order.map(lambda x: '{:.0f}'.format(x))
@@ -296,26 +281,19 @@ class DataCrud(APIView):
             final_cpa = cpa_list.merge(gr_list, on=['Purchase_Order', gr_dataset[1]], how='left', indicator=True)
             final_cpa = final_cpa[final_cpa['_merge'] == 'left_only']
 
-            # kdparts_list = pd.read_csv(value_list[3], engine='python')
-            kdparts_list = pd.read_csv(os.path.abspath('static/inputFiles/kdParts.csv'), low_memory=False,
-                                       encoding='unicode_escape')
-
+            ############################## started for kdParts csv ##################################################
+            kdparts_list = pd.read_csv(os.path.abspath('static/inputFiles/kdParts.csv'), low_memory=False,encoding='unicode_escape')
             kdparts_col = list(kdparts_list.columns)
             kdparts_dataset = input_data(kdparts_col, 'kdparts')
-
             if not isinstance(kdparts_dataset, list):
                 if kdparts_dataset.status_code == 400:
                     data = kdparts_dataset.data
                     return Response(data)
 
-            kdparts_list = kdparts_list[
-                [kdparts_dataset[0], kdparts_dataset[1], kdparts_dataset[2], kdparts_dataset[3], kdparts_dataset[4]]]
-            kdparts_list = kdparts_list.rename(index=str, columns={kdparts_dataset[0]: "Purchase_Order",
-                                                                   kdparts_dataset[1]: "Item"})
+            kdparts_list = kdparts_list[[kdparts_dataset[0], kdparts_dataset[1], kdparts_dataset[2], kdparts_dataset[3], kdparts_dataset[4]]]
+            kdparts_list = kdparts_list.rename(index=str, columns={kdparts_dataset[0]: "Purchase_Order",kdparts_dataset[1]: "Item"})
             kdparts_list['Purchase_Order'] = kdparts_list['Purchase_Order'].astype(str)
-
             kdparts_list = kdparts_list[kdparts_list['Purchase_Order'].str.startswith('4')]
-
             kdparts_list[kdparts_dataset[2]] = kdparts_list[kdparts_dataset[2]].astype('datetime64[ns]')
             final_kdparts = kdparts_list.merge(gr_list, on=['Purchase_Order', 'Item'], how='left', indicator=True)
             final_kdparts = final_kdparts[final_kdparts['_merge'] == 'left_only']
@@ -324,7 +302,6 @@ class DataCrud(APIView):
             pipeline_list['Final_Date'] = pipeline_list[kdparts_dataset[2]] + pd.DateOffset(days=12)
             pipeline_list['Week_Number'] = pipeline_list['Final_Date'].dt.week
             pipeline_list['Final_Year'] = pipeline_list['Final_Date'].dt.year
-            # print('@@@@@@@@@@@@@@@@@',pipeline_list.head(20))
             current_year = dt.date(dt.now()).year
             pipeline_list.loc[pipeline_list.Final_Year < current_year, 'Week_Number'] = 1
             pipeline_list.loc[pipeline_list.Final_Year == current_year + 1, 'Week_Number'] += 52
@@ -347,77 +324,49 @@ class DataCrud(APIView):
                 if (len(individual_columns) >= 8): break;
 
             individual_columns = missing_weeks(individual_columns)
-            # individual_columns = sorted(individual_columns)[:8]
             column_end = [i for i in columns_list if i > individual_columns[len(individual_columns) - 1]]
             pipeline_list['Pipeline Total'] = pipeline_list[columns_list].sum(axis=1)
             pipeline_list['Pipeline Onwards'] = pipeline_list[column_end].sum(axis=1)
 
             try:
-                pipe_list = pipeline_list[
-                    ['PART NO.', 'Discrepancy', 'Pipeline Total'] + individual_columns + ['Pipeline Onwards']]
+                pipe_list = pipeline_list[['PART NO.', 'Discrepancy', 'Pipeline Total'] + individual_columns + ['Pipeline Onwards']]
             except KeyError as e:
                 for x in individual_columns:
                     if x not in pipeline_list.columns:
                         pipeline_list[x] = 0
-                pipe_list = pipeline_list[
-                    ['PART NO.', 'Discrepancy', 'Pipeline Total'] + individual_columns + ['Pipeline Onwards']]
+                pipe_list = pipeline_list[['PART NO.', 'Discrepancy', 'Pipeline Total'] + individual_columns + ['Pipeline Onwards']]
 
+            ############################## result export for lead time csv ############################################
             lead_time_price = pd.read_csv(os.path.abspath('static/LeadTimeCategoryPrice.csv'))
-            # lead_time = pd.read_csv(os.path.abspath('static/leadTime.csv'))
-            # lead_time = lead_time.rename(index=str, columns={"Part No.": "PART NO."})
             lead_time_price["MOQ"] = 1
             final = pd.merge(proc_list, inv_list[['PART NO.', 'Stock Qty']], on=['PART NO.'], how='left')
             final = pd.merge(final, pipe_list, on=['PART NO.'], how='left')
             final = pd.merge(final, lead_time_price[['PART NO.', 'Lead Time', 'MOQ']], on=['PART NO.'], how='left')
-
             cols = final.columns.tolist()
             cols = cols[0:2] + cols[len(cols) - 2:len(cols)] + cols[2:len(cols) - 2]
             cols = [val for val in cols if not str(val).endswith("_x") if not str(val).endswith("_y")]
-
             final = final[cols]
-
             final['Pipeline Total'] = final['Pipeline Total'].fillna(0)
             final['Stock Qty'] = final['Stock Qty'].fillna(0)
-
             final['Total Available'] = final['Stock Qty'] + final['Pipeline Total']
-
             final['Difference'] = final['Total Available'] - final['Total Required']
-
-            # cpa_leadtime = pd.read_csv((os.path.abspath('static/cpaLeadTime.csv')))
             cpa_leadtime = lead_time_price
-            # cpa_leadtime = cpa_leadtime.rename(index=str, columns={"MS code": "PART NO."})
-
             final = pd.merge(final, cpa_leadtime[['PART NO.', 'Lead Time']], on=['PART NO.'], how='left')
-
             final['Lead Time_x'] = final['Lead Time_y'].fillna(final['Lead Time_x'])
-
             final.drop('Lead Time_y', axis=1, inplace=True)
             final = final.rename(index=str, columns={"Lead Time_x": "Lead Time"})
-
-            # final['MOQ'].fillna(1, inplace=True)
             final['Lead Time'].fillna(50, inplace=True)
-
             final['Estimated Delivery Week'] = final['Lead Time'] / 7 + current_week
             final = final.astype({"Estimated Delivery Week": int})
-
-            # price_category = pd.read_csv((os.path.abspath('static/categoryPrice.csv')))
             price_category = lead_time_price
-
             final = pd.merge(final, price_category[['PART NO.', 'Std. Price', 'Category']], on=['PART NO.'], how='left')
-
             final["Std. Price"] = final["Std. Price"].astype(float)
             final["Total Cost"] = final['Difference'] * final['Std. Price']
-
             cols = list(final.columns)
-
             pipeline_columns = cols[cols.index('Pipeline Total') + 1:cols.index('Pipeline Onwards')]
-
             pipeline_columns = [int(i) for i in pipeline_columns]
-
             discrepancy = final[final['Discrepancy'] == 1]
-
             discrepancy = discrepancy.drop(['Discrepancy'], axis=1)
-
             writer = pd.ExcelWriter(os.path.join(path, r'Discrepancy.xlsx'), engine='xlsxwriter')
             discrepancy.to_excel(writer, sheet_name='Sheet1')
             writer.save()
@@ -426,10 +375,7 @@ class DataCrud(APIView):
             final = final.drop(['sum'], axis=1)
             discrepancy = discrepancy[['PART NO.', 'PART NAME', 'Pipeline Total']]
             Category = final[['Category', 'PART NO.']]
-            final = final.drop_duplicates(subset=['PART NO.', 'Current', 'Lead Time', 'Total Required'], keep='first',
-                                          inplace=False)
-
-            ### changed by bharath ###
+            final = final.drop_duplicates(subset=['PART NO.', 'Current', 'Lead Time', 'Total Required'], keep='first',inplace=False)
             final = final.groupby(['PART NO.', 'PART NAME'], sort=False).sum().reset_index()
             final = final.merge(Category, on='PART NO.')
             predict = pd.read_csv(os.path.abspath('static/finalPrediction.csv'))
@@ -452,20 +398,18 @@ class DataCrud(APIView):
 
             predict_pivot = predict.pivot_table("Final_Qty", ["PART NO.", "PART NAME"], "Year")
             predict_pivot = predict_pivot.reset_index()
-
             columns_list = predict_pivot.columns.tolist()
             columns_list.pop(0)
             columns_list.pop(0)
-
             column_begin = list()
             for i in columns_list:
                 if i <= current_year - 4:
                     column_begin.append(i)
+
+            # towards to final output
             predict_pivot.drop(column_begin, axis=1, inplace=True)
             predict_pivot.drop('PART NAME', axis=1, inplace=True)
-
             final = pd.merge(final, predict_pivot, on=['PART NO.'], how='left')
-
             final['Prediction for current year'] = predicted_values
             final['Prediction for current year'][final['Prediction for current year'] < 0] = 0
             final['Monthly Prediction'] = final['Prediction for current year'] / 12
@@ -479,8 +423,7 @@ class DataCrud(APIView):
             indexNum_pipeline = final.columns.tolist().index('Pipeline Total')
             indexNum_required = final.columns.tolist().index('Current')
             datalist_pipeline = final.iloc[:, indexNum_pipeline + 1:int(pipeline_week_user + 1)].fillna(0).sum(axis=1)
-            pending_requirements = final.iloc[:, indexNum_required + 1:int(required_week_user + 1)].fillna(0).sum(
-                axis=1)
+            pending_requirements = final.iloc[:, indexNum_required + 1:int(required_week_user + 1)].fillna(0).sum(axis=1)
             stock_status = final['Stock Qty'] + datalist_pipeline
 
             def createAlert(pending_requirements, stock_status, threshold):
@@ -510,7 +453,6 @@ class DataCrud(APIView):
                 del df
 
             createAlert(pending_requirements, stock_status, final['Threshold'])
-
             alert = final[final['alert'] != False]
             alert = alert[['PART NO.', 'value', 'alert']]
             alert['value'] = alert['value'].abs().apply(np.ceil)
@@ -549,11 +491,9 @@ class DataCrud(APIView):
             final = final.drop(['alert', 'value', 'MOQ'], axis=1)
             final = final.replace(np.nan, 0)
             final = final.drop_duplicates(keep='first', inplace=False)
-            # final['pipelinePlusconsolidatedWeek'] = final['PART NO.'].map(discrepancy.set_index('PART NO.')['Pipeline Total']).fillna(0)
             final['pipelinePlusconsolidatedWeek'] = final['PART NO.'].map(discrepancy['Pipeline Total']).fillna(0)
             pieLineTotalNextWeek = final.columns.tolist().index('Pipeline Total')
-            final[final.columns[pieLineTotalNextWeek + 1]] = final['pipelinePlusconsolidatedWeek'] + final[
-                final.columns[pieLineTotalNextWeek + 1]]
+            final[final.columns[pieLineTotalNextWeek + 1]] = final['pipelinePlusconsolidatedWeek'] + final[ final.columns[pieLineTotalNextWeek + 1]]
             writer_object = pd.ExcelWriter(os.path.join(path, r'Consolidated Output.xlsx'), engine='xlsxwriter')
             headerList = list(final)
             for x in range(len(headerList)):
@@ -579,19 +519,15 @@ class DataCrud(APIView):
                 else:
                     continue;
 
-            final.to_excel(writer_object, sheet_name='Sheet1', startrow=2,
-                           header=True)  # final replace with any other dataframe
-
+            final.to_excel(writer_object, sheet_name='Sheet1', startrow=2,header=True)
             workbook_object = writer_object.book
             worksheet_object = writer_object.sheets['Sheet1']
             worksheet_object.activate()
-
             worksheet_object.set_row(1, 50)
             worksheet_object.set_row(0, 50)
             worksheet_object.set_row(2, 30)
             worksheet_object.set_column('AL:AL', None, None, {'hidden': 1})
-            merge_format = workbook_object.add_format(
-                {'bold': 2, 'border': 1, 'font_size': 20, 'align': 'center', 'valign': 'vcenter'})
+            merge_format = workbook_object.add_format({'bold': 2, 'border': 1, 'font_size': 20, 'align': 'center', 'valign': 'vcenter'})
             worksheet_object.merge_range(0, 0, 0, r + 1, 'Ordering Status', merge_format)
             worksheet_object.merge_range(1, 0, 1, i - 2, '  ', merge_format)
             worksheet_object.merge_range(1, i, 1, j, 'Pending Requirement', merge_format)
@@ -638,20 +574,16 @@ class DataCrud(APIView):
             writer_object.save()
             final = kanban
             final = final[['PART NO.', 'Stock Qty', 'Pipeline Total']]
+            ############################## start threshold csv ############################################
             Threshold_qty = pd.read_excel(os.path.abspath('static/thresholdQty.xlsx'))
-            Threshold_qty = Threshold_qty[
-                ['Kanban Qty', 'No. of kanbans', "Kanban Qty * No' of Kanbans", 'PART NO.']].dropna()
+            Threshold_qty = Threshold_qty[['Kanban Qty', 'No. of kanbans', "Kanban Qty * No' of Kanbans", 'PART NO.']].dropna()
             final = pd.merge(final, Threshold_qty, how='left', on=["PART NO."]).dropna()
             del Threshold_qty
             final['Stock Total at present'] = final['Stock Qty'] + final['Pipeline Total']
-            final['Dropped'] = (
-                        (final["Kanban Qty * No' of Kanbans"] - final['Stock Qty']) / final['Kanban Qty']).apply(
-                np.ceil).apply(abs)
+            final['Dropped'] = ((final["Kanban Qty * No' of Kanbans"] - final['Stock Qty']) / final['Kanban Qty']).apply( np.ceil).apply(abs)
             final['Ordered'] = (final["Pipeline Total"] / final['Kanban Qty']).apply(np.ceil).apply(abs)
-
             lessQty = final.loc[final['Stock Total at present'] < final["Kanban Qty * No' of Kanbans"]]
             moreQty = final.loc[final['Stock Total at present'] > final["Kanban Qty * No' of Kanbans"]]
-
             final = lessQty.append(moreQty, ignore_index=True)
             final = final.drop_duplicates(subset=['PART NO.']).fillna(0)
             final = final.replace([np.inf, -np.inf], np.nan).dropna(how='any')

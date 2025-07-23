@@ -208,14 +208,11 @@ STATIC_ROOT = (os.path.join(BASE_DIR, 'static'))  # production only
 
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'localhost'
-EMAIL_HOST_USER = 'Yil-apps@yokogawa.com'
+EMAIL_HOST = '10.29.15.142'
+EMAIL_HOST_USER = 'yil-apps@yokogawa.com'
 EMAIL_PORT = 25
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-
-TO_RECEIVER = 'B.RAJKUMAR@in.yokogawa.com'
-CC_RECEIVER = ''
-
+TO_RECEIVER = 'ankul.gautam@yokogawa.com'
+CC_RECEIVER = 'Venkatesh.V@yokogawa.com'
 ACCOUNT_EMAIL_VERIFICATION = "none"

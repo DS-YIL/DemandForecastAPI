@@ -5,7 +5,7 @@ import os
 import re
 
 
-def bom_explosion(code, qty, week=None):
+def code_break_explosion(code, qty, week=None):
     def eliminate(i, column_names, d1):
         # Individual characters in model code
         d1 = d1.loc[d1.loc[:, column_names[i]].str.contains(model_name[i], na=True)]
