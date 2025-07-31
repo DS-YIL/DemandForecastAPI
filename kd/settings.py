@@ -68,14 +68,15 @@ WSGI_APPLICATION = 'kd.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Forecasting',
+        'NAME': 'DemandForecast',
         'USER': 'postgres',
-        'PASSWORD': 'Localdb@560100',
-        'HOST': 'localhost',
+        'PASSWORD': 'Yokogawa@560100',
+        'HOST': '10.29.15.168',
         'PORT': '5432',
         'ENFORCE_SCHEMA': False,
     }
 }
+
 
 
 

@@ -111,3 +111,237 @@ ERROR  2025-07-23 14:28:40,751  D:\ForcastingProject\venv97\lib\site-packages\dj
 
 ERROR  2025-07-23 14:30:26,828  D:\ForcastingProject\venv97\lib\site-packages\django\utils\log.py  log  222  2572  Internal Server Error: /data/ 
 
+ERROR  2025-07-23 15:08:12,819  E:\DemandForecast\Backend\venv\lib\site-packages\django\utils\log.py  log  222  5464  Internal Server Error: /cpastokechartdata/ 
+Traceback (most recent call last):
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\DemandForecast\Backend\.\datas\views\chartViews.py", line 220, in get
+    names = ['Total', str(columns[4]) + '-' + str(columns[7]), str(columns[8]) + '-' + str(columns[11]), 'End']
+IndexError: list index out of range
+ERROR  2025-07-23 15:15:04,758  E:\DemandForecast\Backend\venv\lib\site-packages\django\utils\log.py  log  222  9792  Internal Server Error: /cpastokechartdata/ 
+Traceback (most recent call last):
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\DemandForecast\Backend\.\datas\views\chartViews.py", line 220, in get
+    names = ['Total', str(columns[4]) + '-' + str(columns[7]), str(columns[8]) + '-' + str(columns[11]), 'End']
+IndexError: list index out of range
+ERROR  2025-07-24 16:07:37,910  E:\DemandForecast\Backend\venv\lib\site-packages\django\utils\log.py  log  222  16576  Internal Server Error: /cpastokechartdata/ 
+Traceback (most recent call last):
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\DemandForecast\Backend\.\datas\views\chartViews.py", line 220, in get
+    names = ['Total', str(columns[4]) + '-' + str(columns[7]), str(columns[8]) + '-' + str(columns[11]), 'End']
+IndexError: list index out of range
+ERROR  2025-07-25 09:10:33,099  E:\DemandForecast\Backend\venv\lib\site-packages\django\utils\log.py  log  222  17708  Internal Server Error: /cpastokechartdata/ 
+Traceback (most recent call last):
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\DemandForecast\Backend\.\datas\views\chartViews.py", line 220, in get
+    names = ['Total', str(columns[4]) + '-' + str(columns[7]), str(columns[8]) + '-' + str(columns[11]), 'End']
+IndexError: list index out of range
+WARNING  2025-07-25 12:01:39,645  E:\DemandForecast\Backend\venv\lib\site-packages\django\utils\log.py  log  222  12380  Unauthorized: /data/ 
+
+WARNING  2025-07-25 12:01:39,645  E:\DemandForecast\Backend\venv\lib\site-packages\django\utils\log.py  log  222  17616  Unauthorized: /datesofinputfiles/ 
+
+ERROR  2025-07-25 12:01:50,536  E:\DemandForecast\Backend\venv\lib\site-packages\django\utils\log.py  log  222  4984  Internal Server Error: /cpastokechartdata/ 
+Traceback (most recent call last):
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\DemandForecast\Backend\.\datas\views\chartViews.py", line 220, in get
+    names = ['Total', str(columns[4]) + '-' + str(columns[7]), str(columns[8]) + '-' + str(columns[11]), 'End']
+IndexError: list index out of range
+ERROR  2025-07-25 17:15:12,468  E:\DemandForecast\Backend\venv\lib\site-packages\django\utils\log.py  log  222  12932  Internal Server Error: /cpastokechartdata/ 
+Traceback (most recent call last):
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\DemandForecast\Backend\.\datas\views\chartViews.py", line 220, in get
+    names = ['Total', str(columns[4]) + '-' + str(columns[7]), str(columns[8]) + '-' + str(columns[11]), 'End']
+IndexError: list index out of range
+ERROR  2025-07-27 06:52:18,622  E:\DemandForecast\Backend\venv\lib\site-packages\django\utils\log.py  log  222  6408  Internal Server Error: /cpastokechartdata/ 
+Traceback (most recent call last):
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\DemandForecast\Backend\.\datas\views\chartViews.py", line 220, in get
+    names = ['Total', str(columns[4]) + '-' + str(columns[7]), str(columns[8]) + '-' + str(columns[11]), 'End']
+IndexError: list index out of range
+ERROR  2025-07-27 07:26:01,672  E:\DemandForecast\Backend\venv\lib\site-packages\django\utils\log.py  log  222  3132  Internal Server Error: /cpastokechartdata/ 
+Traceback (most recent call last):
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\DemandForecast\Backend\.\datas\views\chartViews.py", line 220, in get
+    names = ['Total', str(columns[4]) + '-' + str(columns[7]), str(columns[8]) + '-' + str(columns[11]), 'End']
+IndexError: list index out of range
+ERROR  2025-07-27 08:09:48,675  E:\DemandForecast\Backend\venv\lib\site-packages\django\utils\log.py  log  222  3456  Internal Server Error: /cpastokechartdata/ 
+Traceback (most recent call last):
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\DemandForecast\Backend\.\datas\views\chartViews.py", line 220, in get
+    names = ['Total', str(columns[4]) + '-' + str(columns[7]), str(columns[8]) + '-' + str(columns[11]), 'End']
+IndexError: list index out of range
+ERROR  2025-07-29 16:59:09,559  E:\DemandForecast\Backend\venv\lib\site-packages\django\utils\log.py  log  222  12396  Internal Server Error: /cpastokechartdata/ 
+Traceback (most recent call last):
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "E:\DemandForecast\Backend\venv\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "E:\DemandForecast\Backend\.\datas\views\chartViews.py", line 220, in get
+    names = ['Total', str(columns[4]) + '-' + str(columns[7]), str(columns[8]) + '-' + str(columns[11]), 'End']
+IndexError: list index out of range
