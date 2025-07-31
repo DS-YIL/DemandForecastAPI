@@ -66,13 +66,101 @@ def code_break_explosion(code, qty, week=None):
 
         return cpa
 
+    # def cpa_code(st_code, option_code, model_name, app_option, cpa):
+    #     """
+    #     Generates CPA code based on the given rules for model_name and option_code.
+    #     """
+    #     # Exotic rule: Check the 2nd and 3rd characters of model_name
+    #     if model_name[1] in ['F', 'L', 'Z'] or model_name[2] in ['H', 'M', 'T', 'A', 'D', 'B', 'W']:
+    #         temp = ['0', '1', '2']
+    #
+    #         # Determine the replacement for model_name[3]
+    #         model_3_replacement = '0' if model_name[3] in temp else '5'
+    #
+    #         # Build the CPA string
+    #         cpa += model_name[1] + model_name[2] + model_3_replacement + model_name[4] + '-' + model_name[5] + 'NNNN'
+    #
+    #         # Handle MH1 special case
+    #         if 'MH1' in option_code:
+    #             option_code = [opt for opt in option_code if opt != 'MH1']
+    #             cpa += "/MG1"
+    #
+    #         for k in ['K1', 'K2', 'K3', 'K5', 'K6']:
+    #             if k in option_code:
+    #                 cpa += "/" + k
+    #
+    #         if 'MG1' in option_code and 'MH1' in option_code:
+    #             cpa += "/MG1"
+    #
+    #         # Append valid options from app_option
+    #         for opt in option_code:
+    #             if opt in app_option:
+    #                 cpa += "/" + opt
+    #             if opt == 'Z':
+    #                 cpa += "/Z"
+    #
+    #     # Non-exotic rule
+    #     else:
+    #         if model_name[1] + model_name[2] in st_code:
+    #             suffix_map = {('M', 'L'): 'MS', ('H', 'L'): 'HS', ('V', 'L'): 'VS', ('A', 'L'): 'AS', ('B', 'L'): 'BS'}
+    #             cpa += suffix_map.get((model_name[1], model_name[2]), model_name[1] + model_name[2]) + "NN-NNNNN"
+    #
+    #             # Special rule for K1 as the last prefix
+    #             if option_code and option_code[-1] == 'K1':
+    #                 # Standard format: Remove prefixes or suffixes
+    #                 print(model_code)
+    #                 cpa = "CPA" + model_code[3:6] + "Y-N" + model_name[1:5] + "-" + model_name[5] + "NNNN"
+    #                 return cpa
+    #
+    #             if 'K1' in option_code or 'K5' in option_code:
+    #                 option_code = [opt for opt in option_code if not opt.startswith('K')]
+    #
+    #             if 'MG1' in option_code:
+    #                 option_code.remove('MG1')
+    #
+    #             if 'MH1' in option_code:
+    #                 option_code.remove('MH1')
+    #
+    #             # for adding K3 and Z option code
+    #             cpa = process_option_codes(option_code, app_option, cpa)
+    #
+    #         # if not in
+    #         else:
+    #             cpa += model_name[1] + model_name[2]
+    #             cpa += '0' if model_name[3] in ['0', '1', '2'] else '5'
+    #             cpa += model_name[4] + '-' + model_name[5] + 'NNNN'
+    #
+    #             if option_code:
+    #                 if model_name[2] == 'S' and model_name[1] in ['F', 'L']:
+    #                     if 'MH1' in option_code:
+    #                         option_code = [opt if opt != 'MH1' else 'MG1' for opt in option_code]
+    #
+    #                 if 'HD' in option_code:
+    #                     cpa = "CPA" + model_name[3:6] + "Y-N" + model_name[9:15] + "NNNN/HD"
+    #                     option_code.remove('HD')
+    #
+    #                 if 'MG1' in option_code:
+    #                     option_code.remove('MG1')
+    #
+    #                 if 'MH1' in option_code:
+    #                     option_code.remove('MH1')
+    #
+    #                 # for adding K3 and Z option code
+    #                 cpa = process_option_codes(option_code, app_option, cpa)
+    #
+    #     # Remove duplicates before returning
+    #     return remove_duplicate_options(cpa)
+
     def cpa_code(st_code, option_code, model_name, app_option, cpa):
-        """
-        Generates CPA code based on the given rules for model_name and option_code.
-        """
-        # Exotic rule: Check the 2nd and 3rd characters of model_name
+
+        def get_model_3_replacement(model_name):
+            return '0' if model_name[3] in ['0', '1', '2'] else '5'
+
+        # Exotic rule
         if model_name[1] in ['F', 'L', 'Z'] or model_name[2] in ['H', 'M', 'T', 'A', 'D', 'B', 'W']:
-            cpa += model_name[1] + model_name[2] + model_name[3] + model_name[4] + '-' + model_name[5] + 'NNNN'
+            model_3_replacement = get_model_3_replacement(model_name)
+            cpa += model_name[1] + model_name[2] + model_3_replacement + model_name[4] + '-' + model_name[5] + 'NNNN'
+
             # Handle MH1 special case
             if 'MH1' in option_code:
                 option_code = [opt for opt in option_code if opt != 'MH1']
@@ -85,7 +173,6 @@ def code_break_explosion(code, qty, week=None):
             if 'MG1' in option_code and 'MH1' in option_code:
                 cpa += "/MG1"
 
-            # Append valid options from app_option
             for opt in option_code:
                 if opt in app_option:
                     cpa += "/" + opt
@@ -98,11 +185,11 @@ def code_break_explosion(code, qty, week=None):
                 suffix_map = {('M', 'L'): 'MS', ('H', 'L'): 'HS', ('V', 'L'): 'VS', ('A', 'L'): 'AS', ('B', 'L'): 'BS'}
                 cpa += suffix_map.get((model_name[1], model_name[2]), model_name[1] + model_name[2]) + "NN-NNNNN"
 
-                # Special rule for K1 as the last prefix
                 if option_code and option_code[-1] == 'K1':
-                    # Standard format: Remove prefixes or suffixes
+                    model_3_replacement = get_model_3_replacement(model_name)
                     print(model_code)
-                    cpa = "CPA" + model_code[3:6] + "Y-N" + model_name[1:5] + "-" + model_name[5] + "NNNN"
+                    cpa = "CPA" + model_code[3:6] + "Y-N" + model_name[1] + model_name[2] + model_3_replacement + \
+                          model_name[4] + "-" + model_name[5] + "NNNN"
                     return cpa
 
                 if 'K1' in option_code or 'K5' in option_code:
@@ -114,14 +201,13 @@ def code_break_explosion(code, qty, week=None):
                 if 'MH1' in option_code:
                     option_code.remove('MH1')
 
-                # for adding K3 and Z option code
                 cpa = process_option_codes(option_code, app_option, cpa)
 
-            # if not in
+            # if not in st_code
             else:
-                cpa += model_name[1] + model_name[2]
-                cpa += '0' if model_name[3] in ['0', '1', '2'] else '5'
-                cpa += model_name[4] + '-' + model_name[5] + 'NNNN'
+                model_3_replacement = get_model_3_replacement(model_name)
+                cpa += model_name[1] + model_name[2] + model_3_replacement + model_name[4] + '-' + model_name[
+                    5] + 'NNNN'
 
                 if option_code:
                     if model_name[2] == 'S' and model_name[1] in ['F', 'L']:
@@ -138,10 +224,8 @@ def code_break_explosion(code, qty, week=None):
                     if 'MH1' in option_code:
                         option_code.remove('MH1')
 
-                    # for adding K3 and Z option code
                     cpa = process_option_codes(option_code, app_option, cpa)
 
-        # Remove duplicates before returning
         return remove_duplicate_options(cpa)
 
     # main logic is here.

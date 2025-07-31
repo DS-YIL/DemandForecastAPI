@@ -345,3 +345,26 @@ Traceback (most recent call last):
   File "E:\DemandForecast\Backend\.\datas\views\chartViews.py", line 220, in get
     names = ['Total', str(columns[4]) + '-' + str(columns[7]), str(columns[8]) + '-' + str(columns[11]), 'End']
 IndexError: list index out of range
+ERROR  2025-07-31 10:37:19,580  D:\DemandForecast\DFBackend\venv97\lib\site-packages\django\utils\log.py  log  222  500  Internal Server Error: /cpastokechartdata/ 
+Traceback (most recent call last):
+  File "D:\DemandForecast\DFBackend\venv97\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\DemandForecast\DFBackend\venv97\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\DemandForecast\DFBackend\venv97\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\DemandForecast\DFBackend\venv97\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\DemandForecast\DFBackend\venv97\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\DemandForecast\DFBackend\venv97\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\DemandForecast\DFBackend\venv97\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\DemandForecast\DFBackend\venv97\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "D:\DemandForecast\DFBackend\venv97\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\DemandForecast\DFBackend\datas\views\chartViews.py", line 220, in get
+    names = ['Total', str(columns[4]) + '-' + str(columns[7]), str(columns[8]) + '-' + str(columns[11]), 'End']
+IndexError: list index out of range
